@@ -13,8 +13,8 @@ WorldInfo {
   ]
 }
 Viewpoint {
-  orientation -0.38792720207590753 0.19774089836049527 0.9002283171535664 2.281165086663677
-  position 1.114135146128721 -1.374094820620852 2.095796563581967
+  orientation -0.1627228519305623 -0.6518213239587081 0.7407092783895051 5.6330325234724645
+  position -1.7884458364211506 1.3472849993690326 1.0875353738719058
 }
 TexturedBackground {
 }
@@ -24,9 +24,47 @@ Floor {
   size 5 5
 }
 Robot {
-  translation -0.9350362919374736 0.25490958823868615 0.3656128210725748
-  rotation -0.0131442917627472 0.10895306350446665 0.9939599879004423 0.2511203931732585
+  translation 0.7343718268675893 0.42306945896499304 0.36560339621517757
+  rotation -0.0011391921141768347 0.9922137661002074 0.12454133692300634 0.02767843013164583
   children [
+    Solid {
+      translation -0.24 -0.01 -0.4
+      scale 0.001 0.001 0.001
+      children [
+        Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 0.933333 0.933333 0.92549
+            }
+          }
+          geometry Mesh {
+            url [
+              "../stl/eje_trasero.stl"
+            ]
+          }
+        }
+      ]
+      name "solid(2)"
+    }
+    Solid {
+      translation 0.83 0 -0.35
+      scale 0.001 0.001 0.001
+      children [
+        Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 0.933333 0.933333 0.92549
+            }
+          }
+          geometry Mesh {
+            url [
+              "../stl/eje_delantero.stl"
+            ]
+          }
+        }
+      ]
+      name "solid(1)"
+    }
     DEF G0 Group {
       children [
         Transform {
@@ -36,14 +74,14 @@ Robot {
           children [
             DEF RIGHT_STEER_HINGE2 Hinge2Joint {
               jointParameters HingeJointParameters {
-                position 5.6395453557067654e-08
+                position 2.6804964035085186e-08
                 axis 0 0 -1
                 suspensionSpringConstant 200000
                 suspensionDampingConstant 4000
                 suspensionAxis 0 0 1
               }
               jointParameters2 JointParameters {
-                position 2.5485916164988587
+                position 3.176086435323751
                 axis 1 0 0
                 dampingConstant 5
               }
@@ -76,7 +114,7 @@ Robot {
                 endPoint Slot {
                   type "vehicle wheel"
                   endPoint Solid {
-                    rotation -0.9999999999981647 4.5281122358665626e-08 -1.91534352713352e-06 0.011605444448868523
+                    rotation 0.9999999999999994 -3.048587759777878e-08 1.157291495780381e-08 0.6158893743760528
                     children [
                       Transform {
                         translation 0.041 0 0
@@ -168,8 +206,8 @@ Robot {
                       density -1
                       mass 30
                     }
-                    linearVelocity 0.00023714791740041686 0.00010008119161405297 2.4731493155090218e-05
-                    angularVelocity -0.0005492909846975009 0.0016788434661461219 2.9526774823338284e-05
+                    linearVelocity 0.012009198210890925 2.4418750669346516e-05 0.00015901324067415715
+                    angularVelocity -0.00020083862665970723 0.08314958173074682 8.226616187523413e-07
                   }
                 }
               }
@@ -183,14 +221,14 @@ Robot {
           children [
             DEF LEFT_STEER_HINGE2 Hinge2Joint {
               jointParameters HingeJointParameters {
-                position 5.0974589571338694e-08
+                position 6.95960952795095e-08
                 axis 0 0 -1
                 suspensionSpringConstant 200000
                 suspensionDampingConstant 4000
                 suspensionAxis 0 0 1
               }
               jointParameters2 JointParameters {
-                position 1.855044545653064
+                position 2.406836969451971
                 axis -1 0 0
                 dampingConstant 5
               }
@@ -226,7 +264,7 @@ Robot {
                 endPoint Slot {
                   type "vehicle wheel"
                   endPoint Solid {
-                    rotation 0.9999999999969977 -3.4320757828751957e-08 -2.450192540860666e-06 0.013593687035736091
+                    rotation -0.9999999999999946 4.3631510682939973e-08 -9.414663758742433e-08 0.5381987367632485
                     children [
                       Transform {
                         translation 0.041 0 0
@@ -318,8 +356,8 @@ Robot {
                       density -1
                       mass 30
                     }
-                    linearVelocity 0.00021726893826756237 9.479896068099439e-05 -2.155612119497683e-05
-                    angularVelocity -0.0005140128260716074 0.0015404125645281093 2.9480904471227554e-05
+                    linearVelocity 0.012008947532546384 2.4345319327685782e-05 0.00019858603879816314
+                    angularVelocity -0.0002001053510368394 0.0831478467096477 5.269242231523662e-07
                   }
                 }
               }
@@ -333,7 +371,7 @@ Robot {
           children [
             DEF RIGHT_REAR_WHEEL_HINGE HingeJoint {
               jointParameters HingeJointParameters {
-                position -0.06034296113246831
+                position 1.8790394751264925
                 dampingConstant 5
                 suspensionSpringConstant 30000
                 suspensionDampingConstant 2000
@@ -359,7 +397,7 @@ Robot {
                 endPoint Slot {
                   type "vehicle wheel"
                   endPoint Solid {
-                    rotation -1 0 0 0.000177850724367939
+                    rotation 1 0 0 1.939204585548151
                     children [
                       Transform {
                         rotation 0 1 0 1.5708
@@ -455,8 +493,8 @@ Robot {
                       density -1
                       mass 10
                     }
-                    linearVelocity 0.00023165438076996786 5.7460791553543904e-05 -1.685871798180812e-05
-                    angularVelocity -0.0005560528887483174 0.0016983505389556914 2.969313275784313e-05
+                    linearVelocity 0.01208660878396426 3.177930725774009e-05 -0.00012032589398704391
+                    angularVelocity -0.0001606867012923958 0.07195887333078914 1.5286741872262395e-07
                   }
                 }
               }
@@ -470,7 +508,7 @@ Robot {
           children [
             DEF LEFT_REAR_WHEEL_HINGE HingeJoint {
               jointParameters HingeJointParameters {
-                position 0.004546389623613416
+                position 0.24793579197370108
                 axis -1 0 0
                 dampingConstant 5
                 suspensionSpringConstant 30000
@@ -497,7 +535,7 @@ Robot {
                 endPoint Slot {
                   type "vehicle wheel"
                   endPoint Solid {
-                    rotation 1 0 0 0.00011056522234317735
+                    rotation -1 0 0 0.2432788371704568
                     children [
                       Transform {
                         translation 0.041 0 0
@@ -594,8 +632,8 @@ Robot {
                       density -1
                       mass 10
                     }
-                    linearVelocity 0.00024312963203144318 6.082159237144588e-05 1.4264417945179095e-05
-                    angularVelocity -0.0003959241918670788 0.001070573490358501 2.960872054885512e-05
+                    linearVelocity 0.012059297904149047 3.117419541760215e-05 -0.0001462698630110547
+                    angularVelocity -0.0001602788121710137 0.07195021649525554 6.129746435608764e-07
                   }
                 }
               }
@@ -797,6 +835,6 @@ Robot {
       0.02673265977304786 0.9533580534651473 -0.08064943487551691
     ]
   }
-  linearVelocity 0.00022911202823538873 8.301140332121122e-05 -1.0894164246587935e-05
-  angularVelocity -0.00010992952182347759 -4.7778696092302806e-05 2.9261621388550813e-05
+  linearVelocity 0.011798617356025947 1.931913618394704e-05 -0.0011047824641590082
+  angularVelocity 9.40777347843167e-05 -0.0021129871603685676 -5.532227653521571e-07
 }
