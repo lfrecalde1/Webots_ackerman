@@ -1,0 +1,802 @@
+#VRML_SIM R2023a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/floors/protos/Floor.proto"
+
+WorldInfo {
+  basicTimeStep 16
+  contactProperties [
+    ContactProperties {
+      material2 "dumbbell"
+    }
+  ]
+}
+Viewpoint {
+  orientation -0.38792720207590753 0.19774089836049527 0.9002283171535664 2.281165086663677
+  position 1.114135146128721 -1.374094820620852 2.095796563581967
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+Floor {
+  size 5 5
+}
+Robot {
+  translation -0.9350362919374736 0.25490958823868615 0.3656128210725748
+  rotation -0.0131442917627472 0.10895306350446665 0.9939599879004423 0.2511203931732585
+  children [
+    DEF G0 Group {
+      children [
+        Transform {
+          translation 0.84 -0.38 -0.2
+          rotation 0 0 1 1.5708
+          scale 0.38 0.38 0.4
+          children [
+            DEF RIGHT_STEER_HINGE2 Hinge2Joint {
+              jointParameters HingeJointParameters {
+                position 5.6395453557067654e-08
+                axis 0 0 -1
+                suspensionSpringConstant 200000
+                suspensionDampingConstant 4000
+                suspensionAxis 0 0 1
+              }
+              jointParameters2 JointParameters {
+                position 2.5485916164988587
+                axis 1 0 0
+                dampingConstant 5
+              }
+              device [
+                RotationalMotor {
+                  name "right_steer"
+                  minPosition -0.45
+                  maxPosition 0.45
+                  maxTorque 10000
+                  sound ""
+                }
+                PositionSensor {
+                  name "right_steer_sensor"
+                }
+              ]
+              device2 [
+                RotationalMotor {
+                  name "right_front_wheel"
+                  acceleration 3.654970760233918
+                  maxVelocity 131.57894736842104
+                  maxTorque 0
+                  sound ""
+                }
+                PositionSensor {
+                  name "right_front_sensor"
+                }
+              ]
+              endPoint Slot {
+                type "vehicle wheel"
+                endPoint Slot {
+                  type "vehicle wheel"
+                  endPoint Solid {
+                    rotation -0.9999999999981647 4.5281122358665626e-08 -1.91534352713352e-06 0.011605444448868523
+                    children [
+                      Transform {
+                        translation 0.041 0 0
+                        rotation 0 1 0 1.5708
+                        children [
+                          Shape {
+                            appearance PBRAppearance {
+                              baseColorMap ImageTexture {
+                                url [
+                                  "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/vehicles/protos/generic/textures/tractor_tire_tread_base_color.jpg"
+                                ]
+                              }
+                              roughness 0.4
+                              metalness 0
+                              normalMap ImageTexture {
+                                url [
+                                  "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/vehicles/protos/generic/textures/tractor_tire_tread_normal.jpg"
+                                ]
+                              }
+                              occlusionMap ImageTexture {
+                                url [
+                                  "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/vehicles/protos/generic/textures/tractor_tire_tread_occlusion.jpg"
+                                ]
+                              }
+                              textureTransform TextureTransform {
+                                rotation 1.5708
+                                scale 1 7
+                              }
+                            }
+                            geometry Cylinder {
+                              bottom FALSE
+                              height 0.19
+                              radius 0.38
+                              top FALSE
+                              subdivision 24
+                            }
+                          }
+                          Shape {
+                            appearance PBRAppearance {
+                              baseColorMap ImageTexture {
+                                url [
+                                  "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/vehicles/protos/generic/textures/tractor_front_tire_side_base_color.jpg"
+                                ]
+                              }
+                              roughnessMap ImageTexture {
+                                url [
+                                  "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/vehicles/protos/generic/textures/tractor_front_tire_side_roughness.jpg"
+                                ]
+                              }
+                              normalMap ImageTexture {
+                                url [
+                                  "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/vehicles/protos/generic/textures/tractor_front_tire_side_normal.jpg"
+                                ]
+                              }
+                              occlusionMap ImageTexture {
+                                url [
+                                  "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/vehicles/protos/generic/textures/tractor_front_tire_side_occlusion.jpg"
+                                ]
+                              }
+                            }
+                            geometry Cylinder {
+                              height 0.19
+                              radius 0.38
+                              side FALSE
+                              subdivision 24
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                    name "front right wheel"
+                    model "tractor front wheel"
+                    boundingObject Group {
+                      children [
+                        Transform {
+                          translation 0.04 0 0
+                          rotation 0 1 0 1.5708
+                          children [
+                            Cylinder {
+                              height 0.19
+                              radius 0.38
+                              subdivision 24
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                    physics Physics {
+                      density -1
+                      mass 30
+                    }
+                    linearVelocity 0.00023714791740041686 0.00010008119161405297 2.4731493155090218e-05
+                    angularVelocity -0.0005492909846975009 0.0016788434661461219 2.9526774823338284e-05
+                  }
+                }
+              }
+            }
+          ]
+        }
+        Transform {
+          translation 0.84 0.38 -0.2
+          rotation 0 0 1 -1.5708
+          scale 0.38 0.38 0.4
+          children [
+            DEF LEFT_STEER_HINGE2 Hinge2Joint {
+              jointParameters HingeJointParameters {
+                position 5.0974589571338694e-08
+                axis 0 0 -1
+                suspensionSpringConstant 200000
+                suspensionDampingConstant 4000
+                suspensionAxis 0 0 1
+              }
+              jointParameters2 JointParameters {
+                position 1.855044545653064
+                axis -1 0 0
+                dampingConstant 5
+              }
+              device [
+                RotationalMotor {
+                  name "left_steer"
+                  minPosition -0.45
+                  maxPosition 0.45
+                  maxTorque 10000
+                  sound ""
+                }
+                PositionSensor {
+                  name "left_steer_sensor"
+                }
+              ]
+              device2 [
+                RotationalMotor {
+                  name "left_front_wheel"
+                  acceleration 3.654970760233918
+                  maxVelocity 131.57894736842104
+                  maxTorque 0
+                  sound ""
+                }
+                PositionSensor {
+                  name "left_front_sensor"
+                }
+                Brake {
+                  name "left_front_brake"
+                }
+              ]
+              endPoint Slot {
+                type "vehicle wheel"
+                endPoint Slot {
+                  type "vehicle wheel"
+                  endPoint Solid {
+                    rotation 0.9999999999969977 -3.4320757828751957e-08 -2.450192540860666e-06 0.013593687035736091
+                    children [
+                      Transform {
+                        translation 0.041 0 0
+                        rotation 0 -1 0 1.5708
+                        children [
+                          Shape {
+                            appearance PBRAppearance {
+                              baseColorMap ImageTexture {
+                                url [
+                                  "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/vehicles/protos/generic/textures/tractor_tire_tread_base_color.jpg"
+                                ]
+                              }
+                              roughness 0.4
+                              metalness 0
+                              normalMap ImageTexture {
+                                url [
+                                  "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/vehicles/protos/generic/textures/tractor_tire_tread_normal.jpg"
+                                ]
+                              }
+                              occlusionMap ImageTexture {
+                                url [
+                                  "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/vehicles/protos/generic/textures/tractor_tire_tread_occlusion.jpg"
+                                ]
+                              }
+                              textureTransform TextureTransform {
+                                rotation 1.5708
+                                scale 1 7
+                              }
+                            }
+                            geometry Cylinder {
+                              bottom FALSE
+                              height 0.19
+                              radius 0.38
+                              top FALSE
+                              subdivision 24
+                            }
+                          }
+                          Shape {
+                            appearance PBRAppearance {
+                              baseColorMap ImageTexture {
+                                url [
+                                  "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/vehicles/protos/generic/textures/tractor_front_tire_side_base_color.jpg"
+                                ]
+                              }
+                              roughnessMap ImageTexture {
+                                url [
+                                  "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/vehicles/protos/generic/textures/tractor_front_tire_side_roughness.jpg"
+                                ]
+                              }
+                              normalMap ImageTexture {
+                                url [
+                                  "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/vehicles/protos/generic/textures/tractor_front_tire_side_normal.jpg"
+                                ]
+                              }
+                              occlusionMap ImageTexture {
+                                url [
+                                  "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/vehicles/protos/generic/textures/tractor_front_tire_side_occlusion.jpg"
+                                ]
+                              }
+                            }
+                            geometry Cylinder {
+                              height 0.19
+                              radius 0.38
+                              side FALSE
+                              subdivision 24
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                    name "front left wheel"
+                    model "tractor front wheel"
+                    boundingObject Group {
+                      children [
+                        Transform {
+                          translation 0.04 0 0
+                          rotation 0 1 0 1.5708
+                          children [
+                            Cylinder {
+                              height 0.19
+                              radius 0.38
+                              subdivision 24
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                    physics Physics {
+                      density -1
+                      mass 30
+                    }
+                    linearVelocity 0.00021726893826756237 9.479896068099439e-05 -2.155612119497683e-05
+                    angularVelocity -0.0005140128260716074 0.0015404125645281093 2.9480904471227554e-05
+                  }
+                }
+              }
+            }
+          ]
+        }
+        Transform {
+          translation -0.24 -0.4 -0.22
+          rotation 0 0 1 1.5707996938995747
+          scale 0.28 0.28 0.3
+          children [
+            DEF RIGHT_REAR_WHEEL_HINGE HingeJoint {
+              jointParameters HingeJointParameters {
+                position -0.06034296113246831
+                dampingConstant 5
+                suspensionSpringConstant 30000
+                suspensionDampingConstant 2000
+                suspensionAxis 0 0 1
+              }
+              device [
+                RotationalMotor {
+                  name "right_rear_wheel"
+                  acceleration 2.314814814814815
+                  maxVelocity 83.33333333333334
+                  maxTorque 100000000
+                  sound ""
+                }
+                PositionSensor {
+                  name "right_rear_sensor"
+                }
+                Brake {
+                  name "right_rear_brake"
+                }
+              ]
+              endPoint Slot {
+                type "vehicle wheel"
+                endPoint Slot {
+                  type "vehicle wheel"
+                  endPoint Solid {
+                    rotation -1 0 0 0.000177850724367939
+                    children [
+                      Transform {
+                        rotation 0 1 0 1.5708
+                        children [
+                          Shape {
+                            appearance PBRAppearance {
+                              baseColorMap ImageTexture {
+                                url [
+                                  "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/vehicles/protos/generic/textures/tractor_tire_tread_base_color.jpg"
+                                ]
+                              }
+                              roughness 0.4
+                              metalness 0
+                              normalMap ImageTexture {
+                                url [
+                                  "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/vehicles/protos/generic/textures/tractor_tire_tread_normal.jpg"
+                                ]
+                              }
+                              occlusionMap ImageTexture {
+                                url [
+                                  "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/vehicles/protos/generic/textures/tractor_tire_tread_occlusion.jpg"
+                                ]
+                              }
+                              textureTransform TextureTransform {
+                                rotation 1.5708
+                                scale 1 7
+                              }
+                            }
+                            geometry Cylinder {
+                              bottom FALSE
+                              height 0.37
+                              radius 0.6
+                              top FALSE
+                              subdivision 24
+                            }
+                          }
+                          Shape {
+                            appearance PBRAppearance {
+                              baseColorMap ImageTexture {
+                                url [
+                                  "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/vehicles/protos/generic/textures/tractor_rear_tire_side_base_color.jpg"
+                                ]
+                              }
+                              roughnessMap ImageTexture {
+                                url [
+                                  "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/vehicles/protos/generic/textures/tractor_rear_tire_side_roughness.jpg"
+                                ]
+                              }
+                              metalnessMap ImageTexture {
+                                url [
+                                  "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/vehicles/protos/generic/textures/tractor_rear_tire_side_metalness.jpg"
+                                ]
+                              }
+                              normalMap ImageTexture {
+                                url [
+                                  "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/vehicles/protos/generic/textures/tractor_rear_tire_side_normal.jpg"
+                                ]
+                              }
+                              occlusionMap ImageTexture {
+                                url [
+                                  "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/vehicles/protos/generic/textures/tractor_rear_tire_side_occlusion.jpg"
+                                ]
+                              }
+                            }
+                            geometry Cylinder {
+                              height 0.37
+                              radius 0.6
+                              side FALSE
+                              subdivision 24
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                    name "rear right wheel"
+                    model "tractor rear wheel"
+                    boundingObject Group {
+                      children [
+                        Transform {
+                          translation 0.04 0 0
+                          rotation 0 1 0 1.5708
+                          children [
+                            Cylinder {
+                              height 0.37
+                              radius 0.6
+                              subdivision 24
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                    physics Physics {
+                      density -1
+                      mass 10
+                    }
+                    linearVelocity 0.00023165438076996786 5.7460791553543904e-05 -1.685871798180812e-05
+                    angularVelocity -0.0005560528887483174 0.0016983505389556914 2.969313275784313e-05
+                  }
+                }
+              }
+            }
+          ]
+        }
+        Transform {
+          translation -0.24 0.39 -0.22
+          rotation 0 0 1 -1.5708
+          scale 0.28 0.28 0.3
+          children [
+            DEF LEFT_REAR_WHEEL_HINGE HingeJoint {
+              jointParameters HingeJointParameters {
+                position 0.004546389623613416
+                axis -1 0 0
+                dampingConstant 5
+                suspensionSpringConstant 30000
+                suspensionDampingConstant 2000
+                suspensionAxis 0 0 1
+              }
+              device [
+                RotationalMotor {
+                  name "left_rear_wheel"
+                  acceleration 2.314814814814815
+                  maxVelocity 83.33333333333334
+                  maxTorque 100000000
+                  sound ""
+                }
+                PositionSensor {
+                  name "left_rear_sensor"
+                }
+                Brake {
+                  name "left_rear_brake"
+                }
+              ]
+              endPoint Slot {
+                type "vehicle wheel"
+                endPoint Slot {
+                  type "vehicle wheel"
+                  endPoint Solid {
+                    rotation 1 0 0 0.00011056522234317735
+                    children [
+                      Transform {
+                        translation 0.041 0 0
+                        rotation 0 -1 0 1.5708
+                        children [
+                          Shape {
+                            appearance PBRAppearance {
+                              baseColorMap ImageTexture {
+                                url [
+                                  "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/vehicles/protos/generic/textures/tractor_tire_tread_base_color.jpg"
+                                ]
+                              }
+                              roughness 0.4
+                              metalness 0
+                              normalMap ImageTexture {
+                                url [
+                                  "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/vehicles/protos/generic/textures/tractor_tire_tread_normal.jpg"
+                                ]
+                              }
+                              occlusionMap ImageTexture {
+                                url [
+                                  "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/vehicles/protos/generic/textures/tractor_tire_tread_occlusion.jpg"
+                                ]
+                              }
+                              textureTransform TextureTransform {
+                                rotation 1.5708
+                                scale 1 7
+                              }
+                            }
+                            geometry Cylinder {
+                              bottom FALSE
+                              height 0.37
+                              radius 0.6
+                              top FALSE
+                              subdivision 24
+                            }
+                          }
+                          Shape {
+                            appearance PBRAppearance {
+                              baseColorMap ImageTexture {
+                                url [
+                                  "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/vehicles/protos/generic/textures/tractor_rear_tire_side_base_color.jpg"
+                                ]
+                              }
+                              roughnessMap ImageTexture {
+                                url [
+                                  "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/vehicles/protos/generic/textures/tractor_rear_tire_side_roughness.jpg"
+                                ]
+                              }
+                              metalnessMap ImageTexture {
+                                url [
+                                  "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/vehicles/protos/generic/textures/tractor_rear_tire_side_metalness.jpg"
+                                ]
+                              }
+                              normalMap ImageTexture {
+                                url [
+                                  "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/vehicles/protos/generic/textures/tractor_rear_tire_side_normal.jpg"
+                                ]
+                              }
+                              occlusionMap ImageTexture {
+                                url [
+                                  "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/vehicles/protos/generic/textures/tractor_rear_tire_side_occlusion.jpg"
+                                ]
+                              }
+                            }
+                            geometry Cylinder {
+                              height 0.37
+                              radius 0.6
+                              side FALSE
+                              subdivision 24
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                    name "rear left wheel"
+                    model "tractor rear wheel"
+                    boundingObject Group {
+                      children [
+                        Transform {
+                          translation 0.04 0 0
+                          rotation 0 1 0 1.5708
+                          children [
+                            Cylinder {
+                              height 0.37
+                              radius 0.6
+                              subdivision 24
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                    physics Physics {
+                      density -1
+                      mass 10
+                    }
+                    linearVelocity 0.00024312963203144318 6.082159237144588e-05 1.4264417945179095e-05
+                    angularVelocity -0.0003959241918670788 0.001070573490358501 2.960872054885512e-05
+                  }
+                }
+              }
+            }
+          ]
+        }
+        DEF base Solid {
+          children [
+            DEF G0 Group {
+              children [
+                Transform {
+                  translation 0.5952 -0.002 -0.0782133
+                  rotation 0 1 0 0.785398
+                  children [
+                    Shape {
+                      appearance Appearance {
+                        material Material {
+                          diffuseColor 0.12549 0.290196 0.529412
+                        }
+                      }
+                      geometry Box {
+                        size 0.04 0.23 0.23
+                      }
+                    }
+                  ]
+                }
+                Transform {
+                  translation 0.128 -0.002 -0.09
+                  rotation 0 1 0 0
+                  children [
+                    Shape {
+                      appearance Appearance {
+                        material Material {
+                          diffuseColor 0.12549 0.290196 0.529412
+                        }
+                      }
+                      geometry Box {
+                        size 0.8 0.229 0.17
+                      }
+                    }
+                  ]
+                }
+                Transform {
+                  translation 0.656 -0.01 -0.203
+                  rotation 0 1 0 0
+                  children [
+                    Shape {
+                      appearance Appearance {
+                        material Material {
+                          diffuseColor 0.12549 0.290196 0.529412
+                        }
+                      }
+                      geometry Box {
+                        size 0.236 0.1 0.12
+                      }
+                    }
+                  ]
+                }
+                Transform {
+                  translation 0.831 -0.01 -0.2085
+                  rotation 0 1 0 0
+                  children [
+                    Shape {
+                      appearance Appearance {
+                        material Material {
+                          diffuseColor 0.12549 0.290196 0.529412
+                        }
+                      }
+                      geometry Box {
+                        size 0.119 0.5 0.13
+                      }
+                    }
+                  ]
+                }
+                Transform {
+                  translation 0.48 0.1873 0
+                  rotation 0 0 1 -0.7854003061004253
+                  children [
+                    Shape {
+                      appearance Appearance {
+                        material Material {
+                          diffuseColor 0.12549 0.290196 0.529412
+                        }
+                      }
+                      geometry Box {
+                        size 0.4 0.2 0.02
+                      }
+                    }
+                  ]
+                }
+                Transform {
+                  translation 0.48 -0.1885 0
+                  rotation 0 0 1 0.7853996938995746
+                  children [
+                    Shape {
+                      appearance Appearance {
+                        material Material {
+                          diffuseColor 0.12549 0.290196 0.529412
+                        }
+                      }
+                      geometry Box {
+                        size 0.4 0.2 0.02
+                      }
+                    }
+                  ]
+                }
+                Transform {
+                  translation 0.546 -0.001 0
+                  rotation 0 0 1 1.5707996938995747
+                  children [
+                    Shape {
+                      appearance Appearance {
+                        material Material {
+                          diffuseColor 0.12549 0.290196 0.529412
+                        }
+                      }
+                      geometry Box {
+                        size 0.24 0.29 0.02
+                      }
+                    }
+                  ]
+                }
+                Transform {
+                  translation -0.307 -0.01 -0.1569
+                  children [
+                    Shape {
+                      appearance Appearance {
+                        material Material {
+                          diffuseColor 0.12549 0.290196 0.529412
+                        }
+                      }
+                      geometry Box {
+                        size 0.12 0.5 0.29
+                      }
+                    }
+                  ]
+                }
+                Transform {
+                  translation -0.25 -0.00999996 -0.22
+                  rotation 1 0 0 1.5708
+                  children [
+                    Shape {
+                      appearance Appearance {
+                        material Material {
+                          diffuseColor 0.12549 0.290196 0.529412
+                        }
+                      }
+                      geometry Cylinder {
+                        height 0.5
+                        radius 0.08
+                      }
+                    }
+                  ]
+                }
+                Transform {
+                  translation 0.51 -0.01 -0.17
+                  rotation 1 0 0 1.5708
+                  children [
+                    Shape {
+                      appearance Appearance {
+                        material Material {
+                          diffuseColor 0.12549 0.290196 0.529412
+                        }
+                      }
+                      geometry Cylinder {
+                        height 0.1
+                        radius 0.08
+                      }
+                    }
+                  ]
+                }
+                Shape {
+                  appearance Appearance {
+                    material Material {
+                      diffuseColor 0.12549 0.290196 0.529412
+                    }
+                  }
+                  geometry Box {
+                    size 0.82 0.8 0.022
+                  }
+                }
+              ]
+            }
+          ]
+          boundingObject USE G0
+        }
+      ]
+    }
+  ]
+  boundingObject USE G0
+  physics Physics {
+    density -1
+    mass 10
+    centerOfMass [
+      0.09746903126202917 -0.005092782356006689 -0.11308759673171191
+    ]
+    inertiaMatrix [
+      3.7300046724444713 16.264203045927385 16.139648213402538
+      0.02673265977304786 0.9533580534651473 -0.08064943487551691
+    ]
+  }
+  linearVelocity 0.00022911202823538873 8.301140332121122e-05 -1.0894164246587935e-05
+  angularVelocity -0.00010992952182347759 -4.7778696092302806e-05 2.9261621388550813e-05
+}
